@@ -6,13 +6,12 @@ using UnityEngine;
 
 namespace DoubleChest {
     public class Main : IMod {
-        public const string Version = "1.0.0";
-        public const string InternalName = "DoubleChest";
-
-        private static readonly List<PoolablePrefabBank.PoolablePrefab> PoolablePrefabs = new();
-
+	    public const string Version = "1.0";
+	    public const string InternalName = "DoubleChest";
+	    public const string DisplayName = "Paintable Double Chest";
+        
         public void EarlyInit() {
-            Debug.Log($"[{InternalName}]: Mod version: {Version}");
+            Debug.Log($"[{DisplayName}]: Mod version: {Version}");
 
             API.Authoring.OnObjectTypeAdded += (entity, _, entityManager) => {
 	            if (entityManager.GetComponentData<ObjectDataCD>(entity).objectID != ObjectID.Carpenter)
